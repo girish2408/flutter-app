@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_practise_course/answer.dart';
-import 'questions.dart';
+import 'package:flutter_practise_course/quiz.dart';
 
 void main() => runApp(MyFirstApp());
 
@@ -11,16 +10,7 @@ class MyFirstApp extends StatefulWidget {
 
 class _MyFirstAppState extends State<MyFirstApp> {
   var _questionIndex = 0;
-  void _answerQuestion() {
-    setState(() {
-      _questionIndex = _questionIndex + 1;
-    });
-    print(_questionIndex);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    var question = [
+  final question = const[
       {
         'questionText': 'What\'s your favorite animal?',
         'answerText': ['Lion','Tiger','Cheetah','Leopard']
@@ -34,19 +24,28 @@ class _MyFirstAppState extends State<MyFirstApp> {
         'answerText': ['Chips','Biscuits','Nachos','Sweets']
       }
     ];
+  void _answerQuestion() {
+    setState(() {
+      _questionIndex = _questionIndex + 1;
+    });
+    print(_questionIndex);
+    if(_questionIndex < question.length) {
+      print('more questions coming up');
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    
+    //question[0]['questionText'] = 'what your fav animal?';
     return MaterialApp(
       home: Scaffold(
           appBar: AppBar(
             title: Text('First app'),
           ),
-          body: Column(
-            children: [
-              MyQuestion(question[_questionIndex]['questionText']),
-              ...(question[_questionIndex]['answerText'] as List<String>).map((answer) {
-                  return MyAnswer(_answerQuestion,answer);
-              }).toList()
-            ],
-          )),
+          body: _questionIndex < question.length ? MyQuiz( question: question,
+          questionIndex: _questionIndex, answerQuestion: _answerQuestion,):
+           Center(child: Text('You did it man!'),),)
     );
   }
 }
