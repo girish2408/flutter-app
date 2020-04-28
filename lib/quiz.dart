@@ -15,8 +15,8 @@ final Function answerQuestion;
       child: Column(
             children: [
               MyQuestion(question[questionIndex]['questionText']),
-              ...(question[questionIndex]['answerText'] as List<String>).map((answer) {
-                  return MyAnswer(answerQuestion,answer);
+              ...(question[questionIndex]['answerText'] as List<Map<String,Object>>).map((answer) {
+                  return MyAnswer(() => answerQuestion(answer['points']),answer['text']);
               }).toList()
             ],
           )
