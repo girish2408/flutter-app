@@ -1,16 +1,13 @@
-# flutter_practise_course
+To set up this application follow steps from below reference :
 
-A new Flutter project.
+for MacOS
+https://flutter.dev/docs/get-started/install/macos
 
-## Getting Started
+for Windows
+https://flutter.dev/docs/get-started/install/windows
 
-This project is a starting point for a Flutter application.
+Once SDK set up done: run command
+flutter doctor ( to check if any platform dependencies need to complete set up)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Install Visual Studio Code or Android Studio or XCode any IDE you are comfortable with
+Run git clone command and launch this app from IDE.
