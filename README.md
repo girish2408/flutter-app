@@ -9,5 +9,5 @@ https://flutter.dev/docs/get-started/install/windows
 Once SDK set up done: run command
 flutter doctor ( to check if any platform dependencies need to complete set up)
 
-Install Visual Studio Code or Android Studio or XCode any IDE you are comfortable with
-Run git clone command and launch this app from IDE.
+1. Install Visual Studio Code or Android Studio or XCode for working on the project
+2. Run git clone command and launch this app or run without debug from IDE.
